@@ -1,12 +1,18 @@
+body{
+    margin: 0;
+    position: relative;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 .header{
-    width: auto;
-    height: 150px;
     background-color: #000000;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    padding: 1em 0;
+    letter-spacing: 0.2em;
+    margin-bottom: 1em;
+
 }
 
 .container {
@@ -16,9 +22,7 @@
     padding-top: 2%;
     display: flex;
     box-sizing: border-box;
-    position: absolute;
-    top: 150px;
-    max-height: 3200px;    
+    position: relative;
 }
 
 .container .grupo h3{
@@ -66,14 +70,9 @@
     border: 0.5px solid rgb(0, 0, 0);
 } 
 
-
-footer{
-        width: auto;
-        height: 200px;
-        background-color: #1e31e0;
-        position: absolute;
-        top: 1000px;
-        left: 0;
-        right: 0;
-        bottom: 0;
+.foter{
+    background-color: #000000;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: auto;
 }
