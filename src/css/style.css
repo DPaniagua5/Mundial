@@ -65,13 +65,15 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 80vh;
+    background-image: url(../img/Background.png);
+    background-size:auto;
+    background-position: center center;
+    height: 100vh;
 }
 
 
 .container {
-    background-color: #ffffff;
     flex-wrap: wrap;
-    padding-left: 7.5%;
     padding-top: 2%;
     padding-bottom: 2%;;
     display: flex;
@@ -98,12 +100,12 @@ body{
     background: #6d1c2a;
     width: 300px;
     height: 350px;
+    margin: 0px auto;
     border-radius: 8px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    margin: 20px;
     text-align: center;
-    
+    margin-bottom: 35px;
 }
 
 .container .grupo .Equipo {

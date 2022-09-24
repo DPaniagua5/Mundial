@@ -83,3 +83,80 @@ li a.active, li a:hover{
 #check{
     display: none;
 }
+
+.main h1{
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin: 13px;
+    text-align: center;
+}
+
+.main .Jornada {
+    flex-wrap: wrap;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0px auto;
+}
+
+.main .Jornada .Grupo h2{
+    margin: 10px 0PX;
+    line-height: 100%;
+    text-align: center;
+
+}
+.main .Jornada .Grupo .P{
+    background: #23c1c7;
+    width:  450px;
+    height: 200px;
+    margin: 0px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 35px;
+    margin-left: 35px;
+}
+
+.main .Jornada .P .Equipos{
+    background: #f1f1e4;
+    width: 410px;
+    height: 70px;
+    border-radius: 50px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 20px 20px;
+    display:flex;
+    line-height: 70px;
+}
+.main .Jornada .Equipos img{
+    width: 50px;
+    height: 30px;
+    margin: 20px;
+    border: 0.5px solid rgb(0, 0, 0);
+}
+
+.main .Jornada .Equipos h3{
+    font-size: 25px;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.main .Jornada .datos{
+    background: #f1f1e4;
+    width: 410px;
+    height: 70px;
+    border-radius: 50px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    margin: 20px 20px;
+    display: flex;
+    line-height: 70px;
+}
+
+.main .Jornada .datos h5{
+    text-align: center;
+    font-family: Roboto;
+    margin-left: 50px;
+    margin-right: 50px;
+}
