@@ -64,13 +64,13 @@ li a.active, li a:hover{
     justify-content: center;
     flex-direction: column;
     background-color: #6d1c2a;
+    flex-wrap: wrap;
 }
 
 .contador{
     display: flex;
     justify-content: space-evenly;
     width: 50%;
-    flex-wrap: wrap;
 }
 
 .contador div{
@@ -82,7 +82,7 @@ li a.active, li a:hover{
 h1{
     text-align: center;
     color: #ffffff;
-    font-size: 40px;
+    font-size: 30px;
     padding: 30px 10px;
 }
 
@@ -90,11 +90,11 @@ p{
     display: grid;
     place-items: center;
     border: solid 1px #ffffff;
-    height: 100px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 25px;
     font-weight: bold;
     background-color: #7E1C85;
 }
@@ -131,7 +131,6 @@ body{
     padding-bottom: 2%;;
     display: flex;
     box-sizing: border-box;
-    position: relative;
 }
 
 .container .grupo h3{
@@ -190,4 +189,46 @@ body{
 .foter .Contacto img{ 
     width: 50px;
     height: 50px;
+}
+
+
+
+@media (max-width: 952px) {
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: #6d1c2a;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0px;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.activate{
+        background: none;
+        color:#000000;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
 }
