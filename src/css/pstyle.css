@@ -89,6 +89,15 @@ li a.active, li a:hover{
     margin: 13px;
     text-align: center;
 }
+.main {
+    flex-wrap: wrap;
+    padding-top: 2%;
+    padding-bottom: 2%;;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+
+}
 
 .main .Jornada {
     flex-wrap: wrap;
