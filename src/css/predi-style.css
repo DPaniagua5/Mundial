@@ -1,37 +1,9 @@
-body{
-    margin: 0;
-    position: relative;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-.header{
-    background-color: #000000;
-    padding: 1em 0;
-    letter-spacing: 0.2em;
-    margin-bottom: 1em;
-
-}
-.foter{
-    background-color: #000000;
-    padding: 1em 0;
-    text-align: center;
-    margin-top: auto;
-}
-
-.foter .Contacto img{ 
-    width: 50px;
-    height: 50px;
-}
-
 *{
     padding: 0%;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-
 }
 
 nav {
@@ -133,6 +105,94 @@ span{
     font-size: 1.5rem;
     font-weight: 400;
 }
+
+
+
+
+body{
+    color: #ffffff;
+    margin: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-height: 80vh;    height: 100vh;
+    font-family: 'Roboto', monospace;
+}
+
+
+
+.container {
+    flex-wrap: wrap;
+    padding-top: 2%;
+    padding-bottom: 2%;;
+    display: flex;
+    box-sizing: border-box;    
+}
+
+.container .grupo h3{
+    color: #ffffff;
+    font-family: 'Roboto', serif;
+    font-size: 20px;
+    padding-top: 10%;
+}
+
+.container .grupo h4{
+    color: #000000;
+    font-family: 'Roboto', serif;
+    font-size: 20px;
+    margin: 13px;
+}
+
+
+.container .grupo {
+    background: #3F0713;
+    width: 300px;
+    height: 350px;
+    margin: 0px auto;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px rgb(255,0,72,1);
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.container .grupo .Equipo {
+    background: #f1f1e4;
+    width: 280px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 10px;
+    display: flex;
+}
+.container .grupo .Equipo:hover{
+    background-color: #ffffff;
+    cursor: pointer
+} 
+
+
+.container .grupo .Equipo img{
+    width: 50px;
+    height: 30px;
+    margin: 10px;
+    text-align: center;
+    border: 0.5px solid rgb(0, 0, 0);
+} 
+
+.foter{
+    background-color: #000000;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.foter .Contacto img{ 
+    width: 50px;
+    height: 50px;
+}
+
+
 
 @media (max-width: 952px) {
     .enlace{
