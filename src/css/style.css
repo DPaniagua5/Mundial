@@ -134,6 +134,88 @@ span{
     font-weight: 400;
 }
 
+.titulo{
+    height: 75px;
+    background-color: #6d1c2a;
+}
+
+.titulo h3{
+    font-family: 'Roboto', 'serif';
+    color: #ffffff;
+    line-height: 75px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.grupos{
+    display: grid;
+    grid-auto-flow: column;
+    scroll-behavior: auto;
+    gap: 1.2rem;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;   
+}
+
+.grupos-grupo{
+    height: 350px;
+    width: 500px;
+    padding: 25px 20px;
+    border-radius: 8px;
+    margin: 10px auto;
+}
+
+.grupos-tabla{
+    height: 250px;
+    width: 450px;
+}
+
+.grupos-grupo h5{
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.grupos-tabla img{
+    width: 50px;
+    height: 30px;
+    margin-left: 3px;
+    text-align: center;
+    border: 0.5px solid rgb(0, 0, 0);
+   }
+.grupos-tabla .encabezado{
+    font-family: 'Roboto', 'sans-serif';
+    text-align: center;
+    font-size: 20px;
+}
+
+.grupos-tabla .team{
+    color: #000000;
+    font-family: 'Roboto', serif;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: left;
+}
+.grupos-tabla .score{
+    color: #000000;
+    font-family: 'Roboto', serif;
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.grupos-tabla .destacado{
+    background-color:#3F0713;
+    color: #ffffff;
+}
+.grupos-tabla .posicion-impar{
+    background-color: rgb(126, 43, 43);
+}
+.grupos-tabla .posicion-par{
+    background-color: rgb(190, 49, 49);
+}
+
 @media (max-width: 952px) {
     .enlace{
         padding-left: 20px;
