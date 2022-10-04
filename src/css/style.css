@@ -155,7 +155,8 @@ span{
     overflow-y: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none;   
+    scrollbar-width: none;
+    background-color: #252525;   
 }
 
 .grupos-grupo{
@@ -176,6 +177,7 @@ span{
     font-family: 'Roboto';
     font-size: 25px;
     margin-bottom: 10px;
+    color: #ffffff;
 }
 .grupos-tabla img{
     width: 50px;
@@ -191,14 +193,14 @@ span{
 }
 
 .grupos-tabla .team{
-    color: #000000;
+    color: #ffffff;
     font-family: 'Roboto', serif;
     font-size: 18px;
     line-height: 30px;
     text-align: left;
 }
 .grupos-tabla .score{
-    color: #000000;
+    color: #ffffff;
     font-family: 'Roboto', serif;
     font-size: 18px;
     line-height: 30px;
@@ -215,6 +217,14 @@ span{
 .grupos-tabla .posicion-par{
     background-color: rgb(190, 49, 49);
 }
+
+.fase-grupos{
+    height: 500px;
+    background-color: #252525;
+}
+
+
+
 
 @media (max-width: 952px) {
     .enlace{
@@ -286,4 +296,42 @@ span{
         font-size: 15px;
         font-weight: 400;
     }   
+
+    .grupos-grupo{
+        height: 350px;
+        width: 400px;
+        padding: 25px 20px;
+        margin: 10px auto;
+    }
+    .grupos-tabla{
+        height: 250px;
+        width: 325px;
+    }
+    .grupos-tabla img{
+        width: 40px;
+        height: 25px;
+        margin-left: 3px;
+        text-align: center;
+        border: 0.5px solid rgb(0, 0, 0);
+       }
+    .grupos-tabla .encabezado{
+        font-family: 'Roboto', 'sans-serif';
+        text-align: center;
+        font-size: 17px;
+    }
+    
+    .grupos-tabla .team{
+        color: #ffffff;
+        font-family: 'Roboto', serif;
+        font-size: 15px;
+        line-height: 30px;
+        text-align: left;
+    }
+    .grupos-tabla .score{
+        color: #ffffff;
+        font-family: 'Roboto', serif;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+    }
 }

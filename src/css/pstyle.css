@@ -1,6 +1,5 @@
 body{
-    background: rgb(131,58,180);
-    background: linear-gradient(180deg, rgba(131,58,180,1) 0%, rgba(255,0,72,1) 50%, rgba(252,176,69,1) 100%);    
+    background-color: #252525;
     background-attachment: fixed;
     margin: 0;
     position: absolute;
@@ -119,7 +118,7 @@ li a.active, li a:hover{
     color: #ffffff;
 }
 .main .Jornada .Grupo .P{
-    background: #6d1c2a;
+    background: #3F0713;
     width:  370px;
     height: 200px;
     margin: 0px auto;
@@ -142,7 +141,7 @@ li a.active, li a:hover{
 .main .Jornada .Equipos img{
     width: 40px;
     border-radius: 50%;
-    height: 40px;
+    height: 40px;   
     margin: 15px 15px;
     border: 1px solid rgb(0, 0, 0);
 }
