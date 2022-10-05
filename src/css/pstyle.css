@@ -279,8 +279,8 @@ li a.active, li a:hover{
 .main .Jornada .datos h5{
     text-align: center;
     font-family: 'Roboto';
-    margin-left: 20px;
-    margin-right: 20px;
-    font-size: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 8px;
 }
 }
