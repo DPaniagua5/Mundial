@@ -18,19 +18,17 @@
           <label for="check" class = "checkbtn">
             <img src="../img/Menu.png">
           </label>
-          <a href="https://www.fifa.com/fifaplus/es/tournaments/mens/worldcup/qatar2022" class = "enlace" target="_blank">
+          <a href = "../html/extra.html" class X= "enlace">
                <img src="../img/Logo.png" alt="logo" class = "logo"> 
           </a>
             <ul>
                 <li> <a class = "active" href="index.html">Inicio</a></li>
                 <li> <a href="partidos.html">Fase de grupos</a></li>
                 <li> <a href="ffinal.html">Fase final</a></li>
-                <li> <a href="prediccion.html">Predicción</a></li>
-                <li> <a href="prueba.html">Prueba</a></li>
             </ul>
         </nav>
     <section class = "contenedor">
-        <h1> Faltan: </h1>
+        <h1> Final: </h1>
         <div class = "contador">
             <div>
                 <p id = "days">00</p>
@@ -50,9 +48,51 @@
     </section>
         <script src = "../js/countdown.js"></script>
 
+        <div class = "titulo">
+          <h3> Partidos de hoy</h3> 
+       </div>
+
+       <div id="wg-api-football-games"
+       data-host="v3.football.api-sports.io"
+       data-key="ad406f1573545faafc7174ac97278cc7"
+       data-date="11/24/2022"
+       data-league="1"
+       data-season="2022"
+       data-theme="dark"
+       data-refresh="2700"
+       data-show-toolbar="true"
+       data-show-errors="false"
+       data-show-logos="true"
+       data-modal-game="false"
+       data-modal-standings="true"
+       data-modal-show-logos="true">
+  </div>
+  <script
+      type="module"
+      src="https://widgets.api-sports.io/2.0.3/widgets.js">
+  </script>
+
     <div class = "titulo">
        <h3> Fase de grupos</h3> 
     </div>
+    <div id="wg-api-football-standings"
+    data-host="v3.football.api-sports.io"
+    data-key="ad406f1573545faafc7174ac97278cc7"
+    data-league="1"
+    data-team=""
+    data-season="2022"
+    data-theme="dark"
+    data-show-errors="false"
+    data-show-logos="true"
+    class="wg_loader">
+      </div>
+
+
+<script
+    type="module"
+    src="https://widgets.api-sports.io/2.0.3/widgets.js">
+</script>
+<!-- 
     <section class = "fase">
       <input type="radio" name="position" checked />
       <input type="radio" name="position" />
@@ -617,7 +657,7 @@
         </div>
         <main>
     </section>
-    
+-->
     
     <div class = "titulo">
       <h3> Fase final</h3> 

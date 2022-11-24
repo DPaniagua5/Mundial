@@ -1,59 +1,193 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name = "viewport" content="width=device-width, initial-scale=1.0">
-    <meta name = "description" content = "Horarios Mundial Guatemala">
-    <meta name = "keywords" content = "Mundial, Qatar, Guatemala, gt, hoy">
+    <html>
+        <head>
+            <title>Tournament Bracket Generator</title>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script type="text/javascript" src="../../node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
+            <link rel="stylesheet" href="prueba.css">
+        <script type="text/javascript">
+            $(function () {
+                var demos = ['save', 'save1', 'final']
+                $.each(demos, function (i, d) {
+                    var demo = $('div#' + d)
+                    $('<div class="demo"></div>').appendTo(demo)
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="main">
+            <div id="save" style="display: inline-block;">
 
-    <title>Mundial Qatar 2022</title>
-    <link rel = "stylesheet" href = "../css/prueba.css">
-    <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
-    <link rel="icon" href="../img/favicon.png">
-</head>
+            </div>
+            <div id="final" style="display: inline-block;">
 
-<body>
-    <nav class="menu">
-        <input type="checkbox" id = "check">
-        <label for="check" class = "checkbtn">
-          <img src="../img/Menu.png">
-        </label>
-        <a href="https://www.fifa.com/fifaplus/es/tournaments/mens/worldcup/qatar2022" class = "enlace" target="_blank">
-             <img src="../img/Logo.png" alt="logo" class = "logo"> 
-        </a>
-          <ul>
-              <li> <a href="index.html">Inicio</a></li>
-              <li> <a href="partidos.html">Fase de grupos</a></li>
-              <li> <a href="ffinal.html">Fase final</a></li>
-              <li> <a href="prediccion.html">Predicción</a></li>
-              <li> <a class = "active" href="prueba.html">Prueba</a></li>
-          </ul>
-      </nav>
+            </div>
+            <div id="save1" style="display: inline-block;float: right">
 
+            </div>
 
-      
-      <footer class = "foter">
-        <div class = "Contacto">
-            <a href="https://github.com/DPaniagua5">
-                <img src="../img/Github.png" alt="Github">
-              </a>
-              <a href="https://www.twitter.com">
-                <img src="../img/Twitter.png" alt="Twitter">
-              </a>
-              <a href="https://www.instagram.com">
-                <img src="../img/Instagram.png" alt="Instagram">
-              </a>
-              <a href="https://www.facebook.com">
-                <img src="../img/Facebook.png" alt="Facebook">
-              </a>
-              <a href="https://www.youtube.com">
-                <img src="../img/Youtube.png" alt="Youtube">
-              </a>
         </div>
-    </footer>
-</body>
+
+        <script type="text/javascript">
+        var finalData = {
+                teams: [
+                    [
+                        {name: "Final 1", flag: ''},
+                        {name: "Final 2", flag: ''}
+                    ],
+                ],
+                //results: [[[1, 0]]]
+          
+            }
+            var saveData1 = {
+                teams: [
+                    [
+                        {name: "Senegal ", flag: 'Senegal'},
+                        {name: "B1", flag: 'in'}
+                    ],
+                    [
+                        {name: "C2", flag: 'in'},
+                        {name: "D1", flag: 'in'}
+                    ],
+                    [
+                        {name: "E2", flag: 'in'},
+                        {name: "F1", flag: 'in'}
+                    ],
+                    [
+                        {name: "G2", flag: 'in'},
+                        {name: "H1", flag: 'in'}
+                    ],
+                ],
+
+
+    //results: [[[1, 0], [1, 0], [1, 0], [1, 0]], [[1, 0], [1, 0]], [[1, 0, 'Final']]],
+            }
+            var saveData = {
+                teams: [
+                    [
+                        {name: "A1", flag: 'in'},
+                        {name: "B2", flag: 'in'}
+                    ],
+                    [
+                        {name: "C1", flag: 'in'},
+                        {name: "D2", flag: 'in'}
+                    ],
+                    [
+                        {name: "E1", flag: 'in'},
+                        {name: "F2", flag: 'in'}
+                    ],
+                    [
+                        {name: "G1", flag: 'in'},
+                        {name: "H2", flag: 'in'}
+                    ],
+                ],
+
+    //results: [[[1, 0], [1, 0], [1, 0], [1, 0]], [[1, 0], [1, 0]], [[1, 0]]],
+            };
+            /* Called whenever bracket is modified
+             *
+             * data:     changed bracket object in format given to init
+             * userData: optional data given when bracket is created.
+             */
+            function saveFn(data, userData) {
+                var json = jQuery.toJSON(data)
+
+                $('#saveOutput').text(JSON.stringify(data, null, 2))
+                /* You probably want to do something like this
+                 jQuery.ajax("rest/"+userData, {contentType: 'application/json',
+                 dataType: 'json',
+                 type: 'post',
+                 data: json})
+                 */
+            }
+
+            /*for flag*/
+            /* Edit function is called when team label is clicked */
+            function edit_fn(container, data, doneCb) {
+                var input = $('<input type="text">')
+                input.val(data ? data.flag + ':' + data.name : '')
+                container.html(input)
+                input.focus()
+                input.blur(function () {
+                    var inputValue = input.val()
+                    if (inputValue.length === 0) {
+                        doneCb(null); // Drop the team and replace with BYE
+                    } else {
+                        var flagAndName = inputValue.split(':') // Expects correct input
+                        doneCb({flag: flagAndName[0], name: flagAndName[1]})
+                    }
+                })
+            }
+
+            /* Render function is called for each team label when data is changed, data
+             * contains the data object given in init and belonging to this slot.
+             *
+             * 'state' is one of the following strings:
+             * - empty-bye: No data or score and there won't team advancing to this place
+             * - empty-tbd: No data or score yet. A team will advance here later
+             * - entry-no-score: Data available, but no score given yet
+             * - entry-default-win: Data available, score will never be given as opponent is BYE
+             * - entry-complete: Data and score available
+             */
+            function render_fn(container, data, score, state) {
+                switch (state) {
+                    case "empty-bye":
+                        container.append("No team")
+                        return;
+                    case "empty-tbd":
+                        container.append("Upcoming")
+                        return;
+
+                    case "entry-no-score":
+                    case "entry-default-win":
+                    case "entry-complete":
+                        container.append('<img src="../img/' + data.flag + '.webp" class = "bandera" /> ').append(data.name)
+                        return;
+                }
+            }
+
+            $(function () {
+                $('div#save .demo').bracket({
+                    teamWidth: 100,
+                    scoreWidth: 20,
+                    matchMargin: 60,
+                    roundMargin: 30,
+                    centerConnectors: true,
+                    init: saveData,
+                    save: function () {}, /* without save() labels are disabled */
+                    decorator: {edit: edit_fn,
+                        render: render_fn}})
+            })
+            $(function () {
+                $('div#save1 .demo').bracket({
+                    dir: 'rl',
+                    teamWidth: 100,
+                    scoreWidth: 20,
+                    matchMargin: 60,
+                    roundMargin: 30,
+                    centerConnectors: true,
+                    init: saveData1,
+                    save: function () {}, /* without save() labels are disabled */
+                    decorator: {edit: edit_fn,
+                        render: render_fn}})
+            })
+            $(function () {
+                $('div#final .demo').bracket({
+                    dir: 'rl',
+                    teamWidth: 100,
+                    scoreWidth: 20,
+                    matchMargin: 60,
+                    roundMargin: 30,
+                    centerConnectors: true,
+                    init: finalData,
+                    save: function () {}, /* without save() labels are disabled */
+                    decorator: {edit: edit_fn,
+                        render: render_fn}})
+            })
+
+
+        </script>
+    </body>
 </html>
