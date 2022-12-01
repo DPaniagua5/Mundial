@@ -146,6 +146,11 @@ span{
     font-size: 30px;
   }
 
+  .bandera{
+    width: 25px;
+    height: 15px;
+  }
+
 .fase{
   height: 570px;
   display: grid;

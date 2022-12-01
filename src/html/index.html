@@ -11,6 +11,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
     <link rel="icon" href="../img/favicon.png">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../../node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
+        <link rel="stylesheet" href="prueba.css">
+
+<script type="text/javascript">
+        $(function () {
+            var demos = ['save', 'save1', 'final']
+            $.each(demos, function (i, d) {
+                var demo = $('div#' + d)
+                $('<div class="demo"></div>').appendTo(demo)
+            })
+        })
+    </script>
+
 </head>
 <body>
         <nav class="menu">
@@ -663,11 +678,178 @@
       <h3> Fase final</h3> 
    </div>
 
-   <section class = "fase-grupos">
-    
+   <div id="main">
+    <div id="save" style="display: inline-block;">
 
-   </section>
-    
+    </div>
+    <div id="final" style="display: inline-block;">
+
+    </div>
+    <div id="save1" style="display: inline-block; float: right">
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+var finalData = {
+        teams: [
+            [
+                {name: "Final 1", flag: ''},
+                {name: "Final 2", flag: ''}
+            ],
+        ],
+        //results: [[[1, 0]]]
+  
+    }
+    var saveData1 = {
+        teams: [
+            [
+                {name: "Sengal", flag: 'Senegal'},
+                {name: "Inglaterra", flag: 'Inglaterra'}
+            ],
+            [
+                {name: "Polonia", flag: 'Polonia'},
+                {name: "Francia", flag: 'Francia'}
+            ],
+            [
+                {name: "E2", flag: 'in'},
+                {name: "F1", flag: 'in'}
+            ],
+            [
+                {name: "G2", flag: 'in'},
+                {name: "H1", flag: 'in'}
+            ],
+        ],
+
+
+//results: [[[1, 0], [1, 0], [1, 0], [1, 0]], [[1, 0], [1, 0]], [[1, 0, 'Final']]],
+    }
+    var saveData = {
+        teams: [
+            [
+                {name: "P. Bajos", flag: 'PBajos'},
+                {name: "E. Unidos", flag: 'EEUU'}
+            ],
+            [
+                {name: "Argentina", flag: 'Argentina'},
+                {name: "Australia", flag: 'Australia'}
+            ],
+            [
+                {name: "E1", flag: 'in'},
+                {name: "F2", flag: 'in'}
+            ],
+            [
+                {name: "G1", flag: 'in'},
+                {name: "H2", flag: 'in'}
+            ],
+        ],
+
+//results: [[[1, 0], [1, 0], [1, 0], [1, 0]], [[1, 0], [1, 0]], [[1, 0]]],
+    };
+    /* Called whenever bracket is modified
+     *
+     * data:     changed bracket object in format given to init
+     * userData: optional data given when bracket is created.
+     */
+    function saveFn(data, userData) {
+        var json = jQuery.toJSON(data)
+
+        $('#saveOutput').text(JSON.stringify(data, null, 2))
+        /* You probably want to do something like this
+         jQuery.ajax("rest/"+userData, {contentType: 'application/json',
+         dataType: 'json',
+         type: 'post',
+         data: json})
+         */
+    }
+
+    /*for flag*/
+    /* Edit function is called when team label is clicked */
+    function edit_fn(container, data, doneCb) {
+        var input = $('<input type="text">')
+        input.val(data ? data.flag + ':' + data.name : '')
+        container.html(input)
+        input.focus()
+        input.blur(function () {
+            var inputValue = input.val()
+            if (inputValue.length === 0) {
+                doneCb(null); // Drop the team and replace with BYE
+            } else {
+                var flagAndName = inputValue.split(':') // Expects correct input
+                doneCb({flag: flagAndName[0], name: flagAndName[1]})
+            }
+        })
+    }
+
+    /* Render function is called for each team label when data is changed, data
+     * contains the data object given in init and belonging to this slot.
+     *
+     * 'state' is one of the following strings:
+     * - empty-bye: No data or score and there won't team advancing to this place
+     * - empty-tbd: No data or score yet. A team will advance here later
+     * - entry-no-score: Data available, but no score given yet
+     * - entry-default-win: Data available, score will never be given as opponent is BYE
+     * - entry-complete: Data and score available
+     */
+    function render_fn(container, data, score, state) {
+        switch (state) {
+            case "empty-bye":
+                container.append("No team")
+                return;
+            case "empty-tbd":
+                container.append("Upcoming")
+                return;
+
+            case "entry-no-score":
+            case "entry-default-win":
+            case "entry-complete":
+                container.append('<img src="../img/' + data.flag + '.webp" class = "bandera" /> ').append(data.name)
+                return;
+        }
+    }
+
+    $(function () {
+        $('div#save .demo').bracket({
+            teamWidth: 100,
+            scoreWidth: 20,
+            matchMargin: 60,
+            roundMargin: 30,
+            centerConnectors: true,
+            init: saveData,
+            save: function () {}, /* without save() labels are disabled */
+            decorator: {edit: edit_fn,
+                render: render_fn}})
+    })
+    $(function () {
+        $('div#save1 .demo').bracket({
+            dir: 'rl',
+            teamWidth: 100,
+            scoreWidth: 20,
+            matchMargin: 60,
+            roundMargin: 30,
+            centerConnectors: true,
+            init: saveData1,
+            save: function () {}, /* without save() labels are disabled */
+            decorator: {edit: edit_fn,
+                render: render_fn}})
+    })
+    $(function () {
+        $('div#final .demo').bracket({
+            dir: 'rl',
+            teamWidth: 100,
+            scoreWidth: 20,
+            matchMargin: 60,
+            roundMargin: 30,
+            centerConnectors: true,
+            init: finalData,
+            save: function () {}, /* without save() labels are disabled */
+            decorator: {edit: edit_fn,
+                render: render_fn}})
+    })
+
+
+</script>
    <footer class = "foter">
         <div class = "Contacto">
             <a href="https://github.com/DPaniagua5">
