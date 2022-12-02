@@ -1,13 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estadísticas</title>
+    <link rel = "stylesheet" href = "../css/estyle.css">
+    <link rel = "stylesheet" href= "https://fonts.googleapis.com/css?family=Roboto">
+    <link rel = "preconnect" href="https://fonts.googleapis.com">
+    <link rel = "preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href = "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel = "icon" href="../img/favicon.png" >
 </head>
 <body>
-    <div class = "content" id = "app"></div>
-    <script src="../js/prediccion.js" type="text/javascript"></script>
+  <nav class="menu">
+    <input type="checkbox" id = "check">
+    <label for="check" class = "checkbtn">
+      <img src="../img/Menu.png">
+    </label>
+    <a href="https://www.fifa.com/fifaplus/es/tournaments/mens/worldcup/qatar2022" class = "enlace" target="_blank">
+         <img src="../img/Logo.png" alt="logo" class = "logo"> 
+    </a>
+      <ul>
+          <li> <a href="index.html">Inicio</a></li>
+          <li> <a href="partidos.html">Fase de grupos</a></li>
+          <li> <a href="ffinal.html">Fase final</a></li>
+          <li> <a class = "active" href="estadisticas.html">Estadísticas</a></li>
+      </ul>
+  </nav>
+
+  <div class = "content" id = "app">  </div>
+
+  <section>
+
+  </section>
+  
+  <script>
+    var header = document.querySelector('header');
+    var section = document.querySelector('section');
+ 
+    var requestURL = 'https://apiv2.allsportsapi.com/football/?&met=Topscorers&leagueId=28&APIkey=19f0c81f8b64991ae9a72bcd9b2b83710b7564c139eaea6f8e08958fd6114099';
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.send();
+ 
+    request.onload = function() {
+      var datos = request.response;
+      populateHeader(datos);
+      showHeroes(datos);
+    }
+ 
+    function populateHeader(jsonObj) {
+      var myH1 = document.createElement('h1');
+      var myPara = document.createElement('p');
+    }
+ 
+    function showHeroes(jsonObj) {
+      var jugadores = jsonObj['result'];
+      var imgArray = new Array();
+
+    /* imgArray[0] = new Image();
+    imgArray[0].src = '../img/C. Gakpo.png';
+    */
+
+    for(var i = 0; i < jugadores.length; i++) {
+        var myArticle = document.createElement('article');
+        var myH6 = document.createElement('h6');
+        var myH2 = document.createElement('h2');
+        var myPara1 = document.createElement('p');
+        var myPara2 = document.createElement('p');
+        var myPara3 = document.createElement('p');
+        
+    imgArray[i] = new Image();
+    imgArray[i].src = '../img/'+ jugadores[i].player_name +'.png';
+
+        img = imgArray[i];
+        myH6.textContent = 'Posición: ' + jugadores[i].player_place;
+        myH2.textContent = jugadores[i].player_name;
+        myPara1.textContent = 'País: ' + jugadores[i].team_name;
+        myPara2.textContent = 'Goles: ' + jugadores[i].goals;
+        myPara3.textContent = 'Goles de Penal: '+jugadores[i].penalty_goals
+        console.log(jugadores[i].player_key);
+        myArticle.appendChild(img);
+        myArticle.appendChild(myH6);
+        myArticle.appendChild(myH2);
+        myArticle.appendChild(myPara1);
+        myArticle.appendChild(myPara2);
+        myArticle.appendChild(myPara3);
+        
+        section.appendChild(myArticle);
+          
+        }
+    }
+ 
+    </script>
+
+<footer class = "foter">
+        <div class = "Contacto">
+            <a href="https://github.com/DPaniagua5">
+                <img src="../img/Github.png" alt="Github">
+              </a>
+              <a href="https://www.twitter.com">
+                <img src="../img/Twitter.png" alt="Twitter">
+              </a>
+              <a href="https://www.instagram.com">
+                <img src="../img/Instagram.png" alt="Instagram">
+              </a>
+              <a href="https://www.facebook.com">
+                <img src="../img/Facebook.png" alt="Facebook">
+              </a>
+              <a href="https://www.youtube.com">
+                <img src="../img/Youtube.png" alt="Youtube">
+              </a>
+        </div>
+    </footer>
 </body>
 </html>
