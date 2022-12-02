@@ -97,11 +97,12 @@ article{
 
 article:hover{
     transform: translateY(-15px);
-    box-shadow: 0 5px 7px #FFFF00;
+}
+article img:hover{
+    filter: drop-shadow(4px 6px 12px  #ff5202);
 }
 
 article img{
-    background: #ffffff;
     width: 175px;
     height: 225px;
 }    
