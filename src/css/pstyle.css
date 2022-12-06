@@ -65,11 +65,9 @@ li a.active, li a:hover{
     background: #6d1c2a;
     transition: .5s;
 }
-
 .checkbtn img{
     height: 35px;
 }
-
 .checkbtn{
     font-size: 30px;
     color: #ffffff;
@@ -165,7 +163,7 @@ li a.active, li a:hover{
 
 .main .Jornada .datos h5{
     text-align: center;
-    font-family: Roboto;
+    font-family: 'Roboto';
     margin-left: 20px;
     margin-right: 15px;
 }
@@ -174,6 +172,7 @@ li a.active, li a:hover{
     height: 40px;
     margin: 15px 10px;
 }
+
 
 @media (max-width: 952px) {
     .enlace{

@@ -87,7 +87,7 @@ li a.active, li a:hover{
 
 article{
     width: 250px;
-    height: 350px;
+    height: 550px;
     overflow: hidden;
     margin: 20px;
     text-align: center;
@@ -97,9 +97,6 @@ article{
 
 article:hover{
     transform: translateY(-15px);
-}
-article img:hover{
-    filter: drop-shadow(4px 6px 12px  #ff5202);
 }
 
 article img{

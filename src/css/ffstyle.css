@@ -1,10 +1,13 @@
 body{
+    background-color: #252525;
+    background-attachment: fixed;
     margin: 0;
-    position: relative;
-    background-color: #ffffff;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 80vh;
+    height: 100vh;
+    font-family: 'Roboto', monospace;
 }
 .header{
     background-color: #000000;
@@ -18,21 +21,17 @@ body{
     text-align: center;
     margin-top: auto;
 }
-
 .foter .Contacto img{ 
     width: 50px;
     height: 50px;
 }
-
 *{
     padding: 0%;
     margin: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-
 }
-
 nav {
     background: #000000;
     height: 80px;
@@ -66,11 +65,9 @@ li a.active, li a:hover{
     background: #6d1c2a;
     transition: .5s;
 }
-
 .checkbtn img{
     height: 35px;
 }
-
 .checkbtn{
     font-size: 30px;
     color: #ffffff;
@@ -82,142 +79,4 @@ li a.active, li a:hover{
 }
 #check{
     display: none;
-}
-
-
-.main h1{
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 40px;
-    margin: 20px auto;
-}
-.main {
-    flex-wrap: wrap;
-    padding-top: 2%;
-    padding-bottom: 2%;;
-    display: flex;
-    box-sizing: border-box;
-}
-
-.main .Jornada{
-    box-sizing: border-box;
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
-    text-align: center;
-}
-.main .Jornada .Grupo{
-    box-sizing: border-box;
-    display: block;
-    margin: 10px auto;
-}
-.main .Jornada .Grupo h2{
-    margin: 10px 0px;
-    line-height: 100%;
-    text-align: center;
-    font-size: 30px;
-    color: #ffffff;
-}
-.main .Jornada .Grupo .P{
-    background: #3F0713;
-    width:  370px;
-    height: 200px;
-    margin: 0px auto;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    margin-bottom: 35px;
-}
-.main .Jornada .P .Equipos{
-    background: #ffffff;
-    width: 330px;
-    height: 70px;
-    border-radius: 50px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-    text-align: center;
-    display:flex;
-    line-height: 70px;
-}
-.main .Jornada .Equipos img{
-    width: 40px;
-    border-radius: 50%;
-    height: 40px;   
-    margin: 15px 15px;
-    border: 1px solid rgb(0, 0, 0);
-}
-.main .Jornada .Equipos h3{
-    font-size: 18px;
-    text-align: center;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
-.main .Jornada .datos{
-    background: #ffffff;
-    width: 330px;
-    height: 70px;
-    border-radius: 50px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-    display: flex;
-    line-height: 70px;
-}
-
-.main .Jornada .datos h5{
-    text-align: center;
-    font-family: Roboto;
-    margin-left: 20px;
-    margin-right: 15px;
-}
-.main .Jornada .datos img{
-    width: 40px;
-    height: 40px;
-    margin: 15px 10px;
-}
-
-
-@media (max-width: 952px) {
-    .enlace{
-        padding-left: 20px;
-    }
-    nav ul li a{
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 858px){
-    .checkbtn{
-        display: block;
-    }
-    ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #6d1c2a;
-        top: 80px;
-        bottom: 0;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-    }
-    nav ul li{
-        display: block;
-        margin: 50px 0px;
-        line-height: 30px;
-    }
-    nav ul li a{
-        font-size: 20px;
-    }
-    li a:hover, li a.activate{
-        background: none;
-        color:#000000;
-    }
-    #check:checked ~ ul{
-        left:0;
-    }
-    .construccion img{
-        height: 100vh;
-        width: 300px;
-    }
 }

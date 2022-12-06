@@ -10,14 +10,10 @@
     <script type="text/javascript" src="../../node_modules/jquery-bracket/dist/jquery.bracket.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../../node_modules/jquery-bracket/dist/jquery.bracket.min.css" />
     <script type="text/javascript" src="../../node_modules/jquery-bracket/src/jquery.bracket.js"></script>
-    <link rel="stylesheet" href="prueba.css">
 
-    <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="jquery.bracket.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="jquery.bracket.min.css" />
 <script type="text/javascript">
         $(function () {
-            var demos = ['save', 'save1', 'final']
+            var demos = ['save']
             $.each(demos, function (i, d) {
                 var demo = $('div#' + d)
                 $('<div class="demo"></div>').appendTo(demo)
@@ -153,43 +149,15 @@
     $(function () {
       $('div#save .demo').bracket({
           teamWidth: 100,
-          scoreWidth: 20,
-          matchMargin: 60,
-          roundMargin: 30,
+          scoreWidth: 25,
+          matchMargin: 80,
+          roundMargin: 90,
           centerConnectors: true,
           init: saveData,
           save: function () {}, /* without save() labels are disabled */
           decorator: {edit: edit_fn,
               render: render_fn}})
     })
-    $(function () {
-      $('div#save1 .demo').bracket({
-          dir: 'rl',
-          teamWidth: 100,
-          scoreWidth: 20,
-          matchMargin: 60,
-          roundMargin: 30,
-          centerConnectors: true,
-          init: saveData1,
-          save: function () {}, /* without save() labels are disabled */
-          decorator: {edit: edit_fn,
-              render: render_fn}})
-    })
-    $(function () {
-      $('div#final .demo').bracket({
-          dir: 'rl',
-          teamWidth: 100,
-          scoreWidth: 20,
-          matchMargin: 60,
-          roundMargin: 30,
-          centerConnectors: true,
-          init: finalData,
-          save: function () {}, /* without save() labels are disabled */
-          decorator: {edit: edit_fn,
-              render: render_fn}})
-    })
-    
     </script>
-
 </body>
 </html>
